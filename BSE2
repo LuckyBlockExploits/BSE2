@@ -88,7 +88,7 @@ ProgressSection:AddButton({
 local TPSection = GeneralTab:CreateSection({
 	Name = "Secret Farming (Turn On Noclip)"
 })
-TPSection:AddButton({
+TPSection:AddToggle({
 	Name = "Farm 1 (Rebirth)",
 	Flag = "Rebirth",
 	Callback = function(x)
@@ -100,7 +100,7 @@ TPSection:AddButton({
 		end
 	end
 })
-TPSection:AddButton({
+TPSection:AddToggle({
 	Name = "Farm 2 (Experience)",
 	Flag = "Exp",
 	Callback = function(x)
