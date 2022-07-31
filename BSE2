@@ -1,0 +1,116 @@
+local library = loadstring(game:GetObjects("rbxassetid://7657867786")[1].Source)()
+
+local Scythe = library:CreateWindow({
+	Name = "BSE2 UI",
+	Themeable = {
+		Info = "sorry if there are bugs",
+	}
+})
+local GeneralTab = Scythe:CreateTab({
+	Name = "General"
+})
+local ProgressSection = GeneralTab:CreateSection({
+	Name = "Teleports"
+})
+
+ProgressSection:AddButton({
+	Name = "Spawn",
+	Flag = "Spawn",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-348, 1, -32)
+	end
+})
+ProgressSection:AddButton({
+	Name = "Island",
+	Flag = "Spawn1",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1838, 7, 165)
+	end
+})
+ProgressSection:AddButton({
+	Name = "(Sub-Area) Sand Cave",
+	Flag = "Spawn2",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(350, 3, 573)
+	end
+})
+ProgressSection:AddButton({
+	Name = "Cave",
+	Flag = "Spawn3",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1560, 6, -1504)
+	end
+})
+ProgressSection:AddButton({
+	Name = "Red Mushrooms",
+	Flag = "Spawn4",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(269, 5, -3346)
+	end
+})
+ProgressSection:AddButton({
+	Name = "(Sub-Area) Dark Mushrooms",
+	Flag = "Spawn5",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-912, 15, -3931)
+	end
+})
+ProgressSection:AddButton({
+	Name = "Pleasure Grounds",
+	Flag = "Spawn6",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1595, 76, -4575)
+	end
+})
+ProgressSection:AddButton({
+	Name = "Arctic",
+	Flag = "Spawn7",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2878, 121, -3869)
+	end
+})
+ProgressSection:AddButton({
+	Name = "(Sub-Area) Igloo",
+	Flag = "Spawn8",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4302, 218, -4118)
+	end
+})
+local TPSection = GeneralTab:CreateSection({
+	Name = "Secret Farming (Turn On Noclip)"
+})
+TPSection:AddButton({
+	Name = "Farm 1 (Rebirth)",
+	Flag = "Rebirth",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1774, -2, 179)
+		wait()
+		while wait() and library.flags.Rebirth do
+			game.Workspace.Buttons.World1.Rebirth["1"]:FindFirstChild("Button").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+		end
+	end
+})
+TPSection:AddButton({
+	Name = "Farm 2 (Experience)",
+	Flag = "Exp",
+	Callback = function(x)
+		local cache = {}
+		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1536, 77, -4569)
+		wait()
+		while wait() and library.flags.Rebirth do
+			game:GetService("Workspace").Buttons.World9.Experience["1"]:FindFirstChild("Button").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+		end
+	end	
+})
+
+
