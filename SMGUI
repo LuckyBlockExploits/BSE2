@@ -1,0 +1,117 @@
+local library = loadstring(game:GetObjects("rbxassetid://7657867786")[1].Source)()
+
+local Scythe = library:CreateWindow({
+	Name = "Scythe Masters UI",
+	Themeable = {
+		Info = "sorry if there are bugs",
+		}
+})
+local GeneralTab = Scythe:CreateTab({
+	Name = "General"
+})
+local ProgressSection = GeneralTab:CreateSection({
+	Name = "Progression"
+})
+ProgressSection:AddToggle({
+	Name = "Auto Scythe",
+	Flag = "AutoScythe",
+	Callback = function(x)
+		local cache = {}
+		game:GetService"RunService".RenderStepped:Connect(function()
+			for i,v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetDescendants()) do
+				if v:IsA("RemoteEvent") then
+					v:FireServer()
+				end
+			end
+		end)
+	end
+})
+ProgressSection:AddToggle({
+	Name = "Disable Popups",
+	Flag = "DisablePopups",
+	Callback = function(x)
+		local cache = {}
+		while wait() and library.flags.DisablePopups do
+			for i,v in next, game.Players.LocalPlayer.PlayerGui.AddValues:GetChildren() do
+				if v:IsA'ImageLabel' then
+					v:Destroy()
+				end
+			end
+		end
+	end
+})
+local SwingsSection = GeneralTab:CreateSection({
+	Name = "Swings"
+})
+SwingsSection:AddButton({
+	Name = "Swing 1000 times",
+	Flag = "AutoScythe2",
+	Callback = function(x)
+		local cache = {}
+		for i=1, 1000 do
+			for i,v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetDescendants()) do
+				if v:IsA("RemoteEvent") then
+					v:FireServer()
+				end
+			end
+		end
+	end
+})
+SwingsSection:AddButton({
+	Name = "Swing 100 times",
+	Flag = "AutoScythe3",
+	Callback = function(x)
+		local cache = {}
+		for i=1, 100 do
+			for i,v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetDescendants()) do
+				if v:IsA("RemoteEvent") then
+					v:FireServer()
+				end
+			end
+		end
+	end
+})
+local TeleportSection = GeneralTab:CreateSection({
+	Name = "Teleports (They don't stack)"
+})
+TeleportSection:AddToggle({
+	Name = "Bring KOT to you (3x)",
+	Flag = "KOT",
+	Callback = function(x)
+		local cache = {}
+		while wait() and library.Flags.KOT do
+			wait()
+		game.Workspace.PvP:FindFirstChild("PvP").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+		end
+		end
+})
+TeleportSection:AddToggle({
+	Name = "Bring KOH to you (2x)",
+	Flag = "KOH",
+	Callback = function(x)
+		local cache = {}
+		while wait() and library.Flags.KOH do
+			wait()
+			game.Workspace.King:FindFirstChild("KingOfTheHill").CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+		end
+	end
+})
+local GPSection = GeneralTab:CreateSection({
+	Name = "Gamepasses"
+})
+GPSection:AddToggle({
+	Name = "Fast Swing",
+	Flag = "FS",
+	Callback = function(x)
+		local cache = {}
+			game.Players.LocalPlayer.Data123.FastSwing.Value = 1
+	end
+})
+GPSection:AddToggle({
+	Name = "Season Pass",
+	Flag = "SP",
+	Callback = function(x)
+		local cache = {}
+		game.Players.LocalPlayer.Missions.Purchase.Value = 1
+	end
+})
