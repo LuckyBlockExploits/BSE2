@@ -119,7 +119,7 @@ local NewSection = GeneralTab:CreateSection({
 	Name = "Misc"
 })
 NewSection:AddToggle({
-	Name = "Unlock all Rebirth Buttons (loop)",
+	Name = "(Loop) Unlock all Rebirths",
 	Flag = "RebButtons",
 	Callback = function(x)
 		local cache = {}
@@ -130,7 +130,7 @@ NewSection:AddToggle({
 	end
 })
 NewSection:AddButton({
-	Name = "Unlock all Rebirth Buttons (no loop)",
+	Name = "(No-Loop) Unlock all Rebirths",
 	Flag = "RebButtons",
 	Callback = function(x)
 		local cache = {}
