@@ -126,4 +126,5 @@ NewSection:AddToggle({
 		while wait() and library.flags.RebButtons do
 		game.Players.LocalPlayer.leaderstats.Rebirths.Value = 10000
 	end
+	end
 })
