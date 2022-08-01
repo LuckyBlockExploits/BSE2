@@ -119,7 +119,7 @@ local NewSection = GeneralTab:CreateSection({
 	Name = "Misc"
 })
 NewSection:AddToggle({
-	Name = "Unlock all Rebirth Buttons",
+	Name = "Unlock all Rebirth Buttons (loop)",
 	Flag = "RebButtons",
 	Callback = function(x)
 		local cache = {}
@@ -127,5 +127,13 @@ NewSection:AddToggle({
 		wait()
 		game.Players.LocalPlayer.leaderstats.Rebirths.Value = 10000
 	end
+	end
+})
+NewSection:AddButton({
+	Name = "Unlock all Rebirth Buttons (no loop)",
+	Flag = "RebButtons",
+	Callback = function(x)
+		local cache = {}
+		game.Players.LocalPlayer.leaderstats.Rebirths.Value = 10000
 	end
 })
