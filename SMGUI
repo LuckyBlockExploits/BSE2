@@ -41,7 +41,7 @@ ProgressSection:AddToggle({
 	end
 })
 local SwingsSection = GeneralTab:CreateSection({
-	Name = "Swings"
+	Name = "Swings (May lag)"
 })
 SwingsSection:AddButton({
 	Name = "Swing 1000 times",
