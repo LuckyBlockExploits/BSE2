@@ -124,6 +124,7 @@ NewSection:AddToggle({
 	Callback = function(x)
 		local cache = {}
 		while wait() and library.Flags.RebButtons do
+		wait()
 		game.Players.LocalPlayer.leaderstats.Rebirths.Value = 10000
 	end
 	end
