@@ -12,8 +12,8 @@ local GeneralTab = Scythe:CreateTab({
 local ProgressSection = GeneralTab:CreateSection({
 	Name = "Progression"
 })
-ProgressSection:AddToggle({
-	Name = "Auto Scythe",
+ProgressSection:AddButton({
+	Name = "Auto Scythe (Untoggleable)",
 	Flag = "AutoScythe",
 	Callback = function(x)
 		local cache = {}
