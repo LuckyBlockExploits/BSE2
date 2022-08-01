@@ -115,3 +115,14 @@ GPSection:AddToggle({
 		game.Players.LocalPlayer.Missions.Purchase.Value = 1
 	end
 })
+local NewSection = GeneralTab:CreateSection({
+	Name = "Misc"
+})
+NewSection:AddToggle({
+	Name = "Unlock all Rebirth Buttons",
+	Flag = "RebButtons",
+	Callback = function(x)
+		local cache = {}
+		game.Players.LocalPlayer.leaderstats.Rebirths.Value = 10000
+	end
+})
